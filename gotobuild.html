@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Bar and Adjusted Image Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .title-bar {
+            background-color: #333; /* Background color of the title bar */
+            padding: 0; /* Remove space around the image */
+            margin: 0; /* Remove any margin */
+            width: 100%; /* Extend the title bar to the full width of the viewport */
+            position: relative; /* To position the button inside */
+        }
+
+        .title-bar img {
+            display: block; /* Remove space below the image */
+            width: 100%; /* Make the image cover the full width of the title bar */
+            height: auto; /* Maintain the aspect ratio of the image */
+        }
+
+        .adjusted-image {
+            background: url('whotoday.PNG') no-repeat center center;
+            background-size: contain; /* Scale the image to fit within the container */
+            background-position: center; /* Center the image */
+            height: 150px; /* Set the height of the image */
+            width: 100%; /* Extend the image to the full width of the viewport */
+        }
+
+        .center-image {
+            text-align: center; /* Center-align the content inside */
+            margin-top: 10px; /* Add some space between the images */
+            top:auto; 
+            margin: -90px auto 0;
+        }
+
+        .center-image img {
+            max-width: 80%; /* Set the maximum width of the image */
+            height: auto; /* Maintain the aspect ratio of the image */
+            margin: 0 auto; /* Center the image horizontally */
+            display: block; /* Make the image a block element to center it */
+        }
+
+        .button-container {
+            display: flex; /* Use flexbox layout */
+            justify-content: center; /* Center the buttons horizontally */
+            align-items: center; /* Center the buttons vertically */
+            margin-top: 20px; /* Add space above the buttons */
+        }
+
+        .button-container form,
+        .button-container button {
+            margin: 10px 30px; /* Add more space between buttons */
+        }
+
+        .button {
+            background-color: #ff3f6c; /* Reddish-pink background color */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Add padding */
+            font-size: 16px; /* Font size */
+            font-weight: bold; /* Font weight */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .button:hover {
+            background-color: #FF69B4; /* Lighter reddish-pink on hover */
+        }
+
+        .logo-f1-button {
+            position: absolute;
+            top: 13px; 
+            right: 0; 
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .logo-f1-button img {
+            width: 50px;
+            height: auto;
+            margin-top: 5px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 20px;
+            height: 50px;
+            background-color: #fff;
+        }
+
+        .navbar img {
+            height: 30px;
+            width: 30px;
+            margin-left: 20px;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <img src="/static/topbar1.PNG" alt="Title Bar Image">
+       
+    </div>
+    <button class="logo-f1-button" onclick="window.location.href='http://localhost:5173/';" type="button">
+        <img src="/static/f.png" alt="Logo">
+    </button>
+    <div class="adjusted-image">
+        <!-- No need for <img> tag in this approach -->
+    </div>
+    <div class="center-image">
+        <img src="/static/all.PNG" alt="New Center Image">
+    </div>
+    <div class="button-container">
+        <form class="gotopage" method="GET" action="/createown">
+            <button class="button">Build Your Own</button>
+        </form>
+        <button class="button">Share</button>
+        <form class="gotopage" method="GET" action="/crefriends">
+        <button class="button">Build with Friends</button>
+        </form>
+    </div>
+</body>
+</html>

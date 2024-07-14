@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif; /* Font family */
+            background: linear-gradient(to bottom, #fdeef4, #f8d7e3); /* Gradient background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%; /* Full width */
+            background-color: #fff; /* White background */
+            padding: 10px 0; /* Vertical padding */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Center align items horizontally */
+        }
+        .navbar img {
+            width: 100%; /* Full width of the image */
+            max-width: 1200px; /* Maximum width to fit nicely */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .form-container {
+            background-color: #fff; /* White background */
+            padding: 40px 30px; /* Increase padding for more space */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+            border-radius: 0; /* Sharp edges */
+            text-align: center; /* Center align text */
+            max-width: 450px; /* Maximum width */
+            width: 100%; /* Full width */
+            margin: 40px auto; /* Center align form container */
+            box-sizing: border-box;
+        }
+        .form-container img.banner {
+            width: 100%; /* Full width */
+            border-radius: 0; /* Sharp edges */
+        }
+        .form-container h2 {
+            margin: 20px 0; /* Margin */
+            font-size: 24px; /* Font size */
+            color: #333; /* Text color */
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column; /* Arrange form items vertically */
+            align-items: center; /* Center form items horizontally */
+            width: 100%; /* Full width */
+            margin: 0 auto; /* Center align form */
+        }
+        .login-form input {
+            width: 90%; /* Slightly smaller width */
+            padding: 15px; /* Add padding for better look */
+            margin-bottom: 20px; /* Increase space between input fields */
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 0; /* Sharp edges */
+        }
+        .login-form button {
+            width: 90%; /* Slightly smaller width */
+            padding: 15px; /* Add padding for better look */
+            background-color: #ff3f6c; /* Pink background color */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 0; /* Sharp edges */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-bottom: 20px; /* Space below button */
+        }
+        .login-form button:hover {
+            background-color: #ff69b4; /* Lighter pink on hover */
+        }
+        .signup-message {
+            margin-top: 20px; /* Space above the message */
+            font-size: 14px; /* Font size */
+            color: #333; /* Text color */
+        }
+        .signup-message a {
+            color: #ff3f6c; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        .signup-message a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="/static/navbar1-image.jpg" alt="Navbar Image">
+    </div>
+    <div class="form-container">
+        <img src="/static/banner.jpg" alt="Banner Image" class="banner">
+        <h2>Login or Signup</h2>
+        <form class="login-form" method="GET" action="/homepage">
+            <input type="text" name="Username" placeholder="+91  Mobile Number*" required>
+            <button type="submit">CONTINUE</button>
+        </form>
+        <div class="signup-message">
+            By continuing, I agree to the <a href="#">Terms of Use & Privacy Policy</a>
+        </div>
+        <div class="signup-message">
+            Have trouble logging in? <a href="#">Get help</a>
+        </div>
+    </div>
+</body>
+</html>
