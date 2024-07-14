@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    position: relative; /* Added to ensure the vertical image container can be positioned */
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none; /* Remove any default border */
+}
+
+#topbar-image,
+#newbar-image {
+    width: 100%;
+    height: auto;
+    border: none; /* Ensure no border on images */
+}
+
+#vertical-image-container {
+    position: absolute;
+    top: 120px; /* Adjusted to shift the vertical image down */
+    left: 0;
+    width: auto;
+    height: calc(100vh - 120px); /* Adjusted to cover the vertical length considering the new top position */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#vertical-image {
+    height: 110%; /* Increased the height to make the vertical image bigger */
+    width: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-left: 320px; /* Increased margin to shift main content to the right */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#drag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px; /* Increased padding */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increased width */
+    justify-content: center;
+    order: 2; /* Ensure drag-container is on the right */
+}
+
+#drop-container {
+    width: 300px; /* Increased width */
+    height: 300px; /* Increased height */
+    border: 2px dashed #888;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    order: 1; /* Ensure drop-container is on the left */
+}
+
+.draggable {
+    width: 70px; /* Increased size */
+    height: 70px; /* Increased size */
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.draggable img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+#button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.custom-button {
+    background-color: #ff3f6c; /* Reddish pink color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-button:hover {
+    background-color: #ff1493; /* Darker reddish pink color for hover effect */
+}
