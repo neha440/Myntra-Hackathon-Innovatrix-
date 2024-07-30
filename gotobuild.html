@@ -16,7 +16,6 @@
             padding: 0; /* Remove space around the image */
             margin: 0; /* Remove any margin */
             width: 100%; /* Extend the title bar to the full width of the viewport */
-            position: relative; /* To position the button inside */
         }
 
         .title-bar img {
@@ -26,111 +25,92 @@
         }
 
         .adjusted-image {
-            background: url('whotoday.PNG') no-repeat center center;
+            background: url('{{ url_for('static', filename='images/whotoday.PNG') }}') no-repeat center center;
             background-size: contain; /* Scale the image to fit within the container */
             background-position: center; /* Center the image */
             height: 150px; /* Set the height of the image */
             width: 100%; /* Extend the image to the full width of the viewport */
         }
 
-        .center-image {
-            text-align: center; /* Center-align the content inside */
-            margin-top: 10px; /* Add some space between the images */
-            top:auto; 
-            margin: -90px auto 0;
+        .image-grid {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the images horizontally */
+            align-items: center; /* Center the images vertically */
+            flex-wrap: wrap; /* Allow wrapping for responsive design */
+            margin: 20px 0; /* Add space around the image grid */
+            gap: 20px; /* Add space between the images */
         }
 
-        .center-image img {
-            max-width: 80%; /* Set the maximum width of the image */
-            height: auto; /* Maintain the aspect ratio of the image */
-            margin: 0 auto; /* Center the image horizontally */
-            display: block; /* Make the image a block element to center it */
+        .image-grid a {
+            display: block; /* Make the anchor a block element */
+            text-decoration: none; /* Remove underline from the link */
+            border-radius: 10px; /* Add rounded corners to the images */
+            overflow: hidden; /* Hide overflow for rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a subtle shadow */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+        }
+
+        .image-grid a:hover {
+            transform: scale(1.05); /* Scale up the image on hover */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Darken shadow on hover */
+        }
+
+        .image-grid img {
+            width: 250px; /* Set fixed width for images */
+            height: 250px; /* Set fixed height for images */
+            object-fit: cover; /* Maintain aspect ratio and fill the image area */
         }
 
         .button-container {
-            display: flex; /* Use flexbox layout */
-            justify-content: center; /* Center the buttons horizontally */
-            align-items: center; /* Center the buttons vertically */
-            margin-top: 20px; /* Add space above the buttons */
-        }
-
-        .button-container form,
-        .button-container button {
-            margin: 10px 30px; /* Add more space between buttons */
+            text-align: center; /* Center-align the button */
+            margin-top: 20px; /* Add space above the button */
         }
 
         .button {
-            background-color: #ff3f6c; /* Reddish-pink background color */
+            background-color: #FF1493; /* Reddish-pink background color */
             color: white; /* White text color */
             border: none; /* Remove border */
-            padding: 10px 20px; /* Add padding */
-            font-size: 16px; /* Font size */
-            font-weight: bold; /* Font weight */
+            padding: 15px 30px; /* Add padding for a larger button */
+            margin: 20px 0; /* Add vertical space for the button */
+            font-size: 18px; /* Font size */
+            font-weight: bold; /* Bold text */
             cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 5px; /* Rounded corners */
+            border-radius: 8px; /* Rounded corners */
             transition: background-color 0.3s; /* Smooth transition for hover effect */
+            text-decoration: none; /* Remove underline from text */
+            display: inline-block; /* Allow padding and background color to apply properly */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow to button */
         }
 
         .button:hover {
             background-color: #FF69B4; /* Lighter reddish-pink on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darken shadow on hover */
         }
-
-        .logo-f1-button {
-            position: absolute;
-            top: 13px; 
-            right: 0; 
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        .logo-f1-button img {
-            width: 50px;
-            height: auto;
-            margin-top: 5px;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 0 20px;
-            height: 50px;
-            background-color: #fff;
-        }
-
-        .navbar img {
-            height: 30px;
-            width: 30px;
-            margin-left: 20px;
-        }
-
-      
     </style>
 </head>
 <body>
     <div class="title-bar">
-        <img src="/static/topbar1.PNG" alt="Title Bar Image">
-       
+        <img src="{{ url_for('static', filename='images/topbar.PNG') }}" alt="Title Bar Image">
     </div>
-    <button class="logo-f1-button" onclick="window.location.href='http://localhost:5173/';" type="button">
-        <img src="/static/f.png" alt="Logo">
-    </button>
     <div class="adjusted-image">
         <!-- No need for <img> tag in this approach -->
     </div>
-    <div class="center-image">
-        <img src="/static/all.PNG" alt="New Center Image">
+    <div class="image-grid">
+        <a href="{{ url_for('lead_page') }}",target="_blank">
+            <img src="{{ url_for('static', filename='images/Jaipur.PNG') }}" alt="Image 1">
+        </a>
+        <a href="page2.html">
+            <img src="{{ url_for('static', filename='images/OldMoney.PNG') }}" alt="Image 2">
+        </a>
+        <a href="page3.html">
+            <img src="{{ url_for('static', filename='images/90.PNG') }}" alt="Image 3">
+        </a>
+        <a href="page4.html">
+            <img src="{{ url_for('static', filename='images/AWOL.PNG') }}" alt="Image 4">
+        </a>
     </div>
     <div class="button-container">
-        <form class="gotopage" method="GET" action="/createown">
-            <button class="button">Build Your Own</button>
-        </form>
-        <button class="button">Share</button>
-        <form class="gotopage" method="GET" action="/crefriends">
-        <button class="button">Build with Friends</button>
-        </form>
+        <a href="file:///D:/OneDrive/Mukta_OneDrive/Mukta_exploration/Myntra_2024/templates/ownbuild5.html" class="button">Build Your Own</a>
     </div>
 </body>
 </html>
