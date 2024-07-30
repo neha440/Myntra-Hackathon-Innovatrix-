@@ -90,14 +90,15 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="/static/navbar1-image.jpg" alt="Navbar Image">
+        <img src="{{ url_for('static', filename='images/topbar.PNG') }}" alt="Navbar Image">
     </div>
     <div class="form-container">
-        <img src="/static/banner.jpg" alt="Banner Image" class="banner">
+        <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner Image" class="banner">
         <h2>Login or Signup</h2>
-        <form class="login-form" method="GET" action="/homepage">
-            <input type="text" name="Username" placeholder="+91  Mobile Number*" required>
-            <button type="submit">CONTINUE</button>
+        <form class="login-form" action="/form_login" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
         </form>
         <div class="signup-message">
             By continuing, I agree to the <a href="#">Terms of Use & Privacy Policy</a>
